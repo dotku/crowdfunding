@@ -39,6 +39,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.3.1
         version: 4.3.1(vite@5.3.5)
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.40)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -48,6 +51,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.7
         version: 0.4.9(eslint@8.57.0)
+      postcss:
+        specifier: ^8.4.40
+        version: 8.4.40
       tailwindcss:
         specifier: ^3.4.7
         version: 3.4.7
@@ -1683,6 +1689,13 @@ packages:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
 
+  autoprefixer@10.4.20:
+    resolution: {integrity: sha512-XY25y5xSv/wEoqzDyXXME4AFfkZI0P23z6Fs3YgymDnKJkCGOnkL0iTxCa85UTqaSgfcqyf3UA6+c7wUvx/16g==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+
   bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
 
@@ -1969,6 +1982,9 @@ packages:
   foreground-child@3.2.1:
     resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
     engines: {node: '>=14'}
+
+  fraction.js@4.3.7:
+    resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
   framer-motion@11.3.21:
     resolution: {integrity: sha512-D+hfIsvzV8eL/iycld4K+tKlg2Q2LdwnrcBEohtGw3cG1AIuNYATbT5RUqIM1ndsAk+EfGhoSGf0UaiFodc5Tw==}
@@ -2347,6 +2363,10 @@ packages:
 
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
+    engines: {node: '>=0.10.0'}
+
+  normalize-range@0.1.2:
+    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
 
   object-assign@4.1.1:
@@ -5348,6 +5368,16 @@ snapshots:
 
   array-union@2.1.0: {}
 
+  autoprefixer@10.4.20(postcss@8.4.40):
+    dependencies:
+      browserslist: 4.23.3
+      caniuse-lite: 1.0.30001647
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.1
+      postcss: 8.4.40
+      postcss-value-parser: 4.2.0
+
   bail@2.0.2: {}
 
   balanced-match@1.0.2: {}
@@ -5658,6 +5688,8 @@ snapshots:
     dependencies:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
+
+  fraction.js@4.3.7: {}
 
   framer-motion@11.3.21(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -6143,6 +6175,8 @@ snapshots:
   node-releases@2.0.18: {}
 
   normalize-path@3.0.0: {}
+
+  normalize-range@0.1.2: {}
 
   object-assign@4.1.1: {}
 
