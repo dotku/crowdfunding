@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { rootLoader } from "./routes/root";
 import { projectLoader } from "./routes/project";
 import { projectsLoader } from "./routes/projects";
@@ -12,7 +12,7 @@ import SpinnerScreen from "./components/design-system/SpinnerScreen";
 const ProjectsPage = lazy(() => import("./routes/projects"));
 const ProjectDetailPage = lazy(() => import("./routes/project"));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     loader: rootLoader,
