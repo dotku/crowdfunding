@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 import styled from "styled-components";
 import cx from "classnames";
+import projects from "../../data/Projects";
+import { useMemo } from "react";
 
 const StyledArticle = styled.div`
   p {
@@ -19,8 +21,22 @@ const StyledArticle = styled.div`
   }
 `;
 
+const getNextProjectId = (currentProject) => {
+  let index = projects.findIndex((p) => p.id === currentProject.id);
+  if (index < projects.length && projects[++index]) return projects[index].id;
+};
+
+const getPrevProjectId = (currentProject) => {
+  let index = projects.findIndex((p) => p.id === currentProject.id);
+  if (index > 0) return projects[--index].id;
+};
+
 export default function ProjectDetailCard({ project }) {
+  const nextProjectId = useMemo(() => getNextProjectId(project), [project]);
+  const prevProjectId = useMemo(() => getPrevProjectId(project), [project]);
+
   const { name, detail, image } = project;
+
   return (
     <Card className="mt-6">
       <Image
@@ -41,15 +57,23 @@ export default function ProjectDetailCard({ project }) {
       </CardBody>
       <Divider />
       <CardFooter className="justify-between">
-        <Link to={`/project/${Number(project.id) - 1}`}>
-          <Button>Prev</Button>
-        </Link>
+        <div>
+          {prevProjectId ? (
+            <Link to={`/project/${prevProjectId}`}>
+              <Button>Prev</Button>
+            </Link>
+          ) : null}
+        </div>
         <Link to="/">
           <Button variant="ghost">Home</Button>
         </Link>
-        <Link to={`/project/${Number(project.id) + 1}`}>
-          <Button>Next</Button>
-        </Link>
+        <div>
+          {nextProjectId ? (
+            <Link to={`/project/${nextProjectId}`}>
+              <Button>Next</Button>
+            </Link>
+          ) : null}
+        </div>
       </CardFooter>
     </Card>
   );

@@ -15,6 +15,13 @@ export async function projectLoader({ params }) {
   }
 }
 
+export const getUSDNumber = (num) => {
+  if (typeof num === "undefined") num = 0;
+  return Intl.NumberFormat("us", { style: "currency", currency: "USD" }).format(
+    num
+  );
+};
+
 function ProjectDetailPage() {
   const { project } = useLoaderData();
   const [projectFundValue, setProjectFundValue] = useState(0);
@@ -39,11 +46,11 @@ function ProjectDetailPage() {
       </div>
       <Progress
         aria-label="fund"
-        label="Current Fund"
+        label={`Fund: ${getUSDNumber(projectFundValue)} / ${getUSDNumber(
+          project.targetFund
+        )}`}
         value={projectFundValue}
         maxValue={project.targetFund}
-        formatOptions={{ style: "currency", currency: "USD" }}
-        showValueLabel={true}
       />
       <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 my-3">
         <Input label="Name" placeholder="Joun Doe" />
