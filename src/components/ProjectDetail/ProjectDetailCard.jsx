@@ -62,7 +62,11 @@ export default function ProjectDetailCard({ project }) {
             <Link to={`/project/${prevProjectId}`}>
               <Button>Prev</Button>
             </Link>
-          ) : null}
+          ) : (
+            <Button className="text-gray-500" disabled>
+              Next
+            </Button>
+          )}
         </div>
         <Link to="/">
           <Button variant="ghost">Home</Button>
@@ -72,7 +76,11 @@ export default function ProjectDetailCard({ project }) {
             <Link to={`/project/${nextProjectId}`}>
               <Button>Next</Button>
             </Link>
-          ) : null}
+          ) : (
+            <Button className="text-gray-500" disabled>
+              Next
+            </Button>
+          )}
         </div>
       </CardFooter>
     </Card>
