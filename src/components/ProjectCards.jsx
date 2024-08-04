@@ -6,10 +6,8 @@ import {
   CardFooter,
   Divider,
   Button,
-  Spinner,
   Image,
 } from "@nextui-org/react";
-import { useState } from "react";
 import SpinnerScreen from "./design-system/SpinnerScreen";
 
 export default function ProjectCards() {

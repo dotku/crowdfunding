@@ -22,7 +22,7 @@ export default function ProjectDetailCard({ project }) {
         width={1300}
         height={300}
       />
-      <CardHeader className="justify-between">
+      <CardHeader className="flex-col">
         <h2 className="text-3xl font-bold">{name}</h2>
       </CardHeader>
       <Divider />

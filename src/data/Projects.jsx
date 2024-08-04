@@ -2,6 +2,8 @@ const projects = [
   {
     id: "001",
     name: "Tipi Travel",
+    targetFund: 60000,
+    currentFund: 5000,
     discription:
       "An affortable group booking service that could lower down the travel cost",
     image:
