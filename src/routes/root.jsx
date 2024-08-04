@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { genProjects } from "../data/Projects";
 
 export default function Root() {
@@ -6,7 +6,9 @@ export default function Root() {
     <>
       {/* all the other elements */}
       <div id="detail">
-        <h1>Crowdfunding</h1>
+        <Link to="/">
+          <h1>Crowdfunding</h1>
+        </Link>
         <Outlet />
       </div>
     </>
