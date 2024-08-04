@@ -27,7 +27,7 @@ export default function ProjectCards() {
                 <Image
                   alt="Woman listing to music"
                   className="object-cover !w-full rounded-none"
-                  src={p.image}
+                  src={p.image.url}
                   height={240}
                 />
               </Link>

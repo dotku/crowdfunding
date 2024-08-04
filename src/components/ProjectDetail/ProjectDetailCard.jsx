@@ -11,6 +11,7 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 import styled from "styled-components";
+import cx from "classnames";
 
 const StyledArticle = styled.div`
   p {
@@ -24,8 +25,8 @@ export default function ProjectDetailCard({ project }) {
     <Card className="mt-6">
       <Image
         alt="Woman listing to music"
-        className="object-cover !w-full rounded-none"
-        src={image}
+        className={cx("object-cover !w-full rounded-none", image.className)}
+        src={image.url}
         width={1300}
         height={300}
       />
