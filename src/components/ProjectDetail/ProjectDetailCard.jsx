@@ -10,6 +10,13 @@ import {
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
+import styled from "styled-components";
+
+const StyledArticle = styled.div`
+  p {
+    margin-top: 0.5rem;
+  }
+`;
 
 export default function ProjectDetailCard({ project }) {
   const { name, detail, image } = project;
@@ -27,9 +34,9 @@ export default function ProjectDetailCard({ project }) {
       </CardHeader>
       <Divider />
       <CardBody>
-        <div className="p-5">
+        <StyledArticle className="p-5 max-w-5xl mx-auto">
           <ReactMarkdown rehypePlugins={[rehypeRaw]} children={detail} />
-        </div>
+        </StyledArticle>
       </CardBody>
       <Divider />
       <CardFooter className="justify-between">

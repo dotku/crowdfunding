@@ -65,8 +65,12 @@ PROGRAMMES - these could happen in the locations as listed  above, people can ap
       "https://images.inc.com/uploaded_files/image/1920x1080/sebastien-gabriel-igK8lcBHaHE-unsplash_399292.jpg",
     targetFund: "40",
     description: `We are trying to create customized domain on Medium to share more content on tech, business and media topics`,
-    detail: `We are a San Francisco based software company, not profit yet... but we build many websites, apps for the community and some startup companies.
-    We are looking for some funding for our projects. Plaese support us!
+    detail: `
+<p>We are a San Francisco based software company, not profit yet... but we build many websites, apps for the community and some startup companies, including
+🤝 <a href="https://github.com/dotku/crowdfunding" class="font-bold">Crowdfunding</a> 🚀.<p>
+<p>We are looking for funding for our projects.</p>
+<p>We want to build a Decentralized Autonomous Organization (DAO) company that everyone can get involed and contribute. You can learn, play and get varied help.</p>
+<p>Plaese support us! 🙏</p>
     `,
   },
 ];
