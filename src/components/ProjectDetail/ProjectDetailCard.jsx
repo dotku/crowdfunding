@@ -16,9 +16,6 @@ export default function ProjectDetailCard({ project }) {
     <Card>
       <CardHeader className="justify-between">
         <h2 className="text-lg font-bold">{name}</h2>
-        <Link to="/">
-          <Button>Back</Button>
-        </Link>
       </CardHeader>
       <Divider />
       <CardBody>
@@ -27,7 +24,17 @@ export default function ProjectDetailCard({ project }) {
         </div>
       </CardBody>
       <Divider />
-      <CardFooter className="justify-end"></CardFooter>
+      <CardFooter className="justify-between">
+        <Link to={`/project/${Number(project.id) - 1}`}>
+          <Button>Prev</Button>
+        </Link>
+        <Link to="/">
+          <Button variant="ghost">Home</Button>
+        </Link>
+        <Link to={`/project/${Number(project.id) + 1}`}>
+          <Button>Next</Button>
+        </Link>
+      </CardFooter>
     </Card>
   );
 }
