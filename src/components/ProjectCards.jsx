@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -31,11 +31,11 @@ export default function ProjectCards() {
               <CardBody>{p.discription}</CardBody>
               <Divider />
               <CardFooter className="justify-end">
-                <a href={`/project/${p.id}`}>
+                <Link to={`/project/${p.id}`}>
                   <Button color="primary" variant="ghost">
                     More
                   </Button>
-                </a>
+                </Link>
               </CardFooter>
             </Card>
           ))
