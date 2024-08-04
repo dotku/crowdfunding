@@ -19,28 +19,34 @@ export default function ProjectCards() {
   }
 
   return (
-    <div className="flex justify-between">
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
       {Array.isArray(projects) && projects.length
         ? projects.map((p) => (
-            <Card key={p.id} className="md:w-[30%] sm:w-full">
+            <Card key={p.id}>
               <Link to={`/project/${p.id}`}>
                 <Image
                   alt="Woman listing to music"
                   className="object-cover !w-full rounded-none"
                   src={p.image}
-                  width={500}
+                  height={240}
                 />
               </Link>
               <CardHeader>
                 <h3 className="text-large font-bold">{p.name}</h3>
               </CardHeader>
               <Divider />
-              <CardBody>{p.discription}</CardBody>
+              <CardBody>{p.description}</CardBody>
               <Divider />
-              <CardFooter className="justify-end">
+              <CardFooter className="justify-between">
+                <span className="text-xl">
+                  {Intl.NumberFormat("us", {
+                    style: "currency",
+                    currency: "USD",
+                  }).format(p.targetFund)}
+                </span>
                 <Link to={`/project/${p.id}`}>
                   <Button color="primary" variant="ghost">
-                    More
+                    Detail
                   </Button>
                 </Link>
               </CardFooter>
