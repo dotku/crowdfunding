@@ -1,15 +1,7 @@
-import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { genProject } from "../data/Projects";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Divider,
-} from "@nextui-org/react";
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
+import { Button, Divider, Input } from "@nextui-org/react";
+import ProjectDetailCard from "../components/ProjectDetail/ProjectDetailCard";
 
 export async function projectLoader({ params }) {
   console.log("projectLoader called with params:", params);
@@ -27,25 +19,29 @@ function ProjectDetailPage() {
 
   if (!project)
     return <div>Something is wrong, please come back again later</div>;
-  const { name, detail } = project;
+
   return (
-    <Card>
-      <CardHeader>
-        <h2 className="text-lg font-bold">{name}</h2>
-      </CardHeader>
-      <Divider />
-      <CardBody>
-        <div className="p-5">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]} children={detail} />
-        </div>
-      </CardBody>
-      <Divider />
-      <CardFooter className="justify-end">
-        <Link to="/">
-          <Button>Back</Button>
-        </Link>
-      </CardFooter>
-    </Card>
+    <>
+      <ProjectDetailCard project={project} />
+      <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 my-3">
+        <Input label="Name" placeholder="Joun Doe" />
+        <Input label="Fund" placeholder="5" required />
+      </div>
+      <div className="my-3">
+        <Input label="Message" placeholder="the comment you wnat to leave" />
+      </div>
+      <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 my-3">
+        <Input label="Card Number" placeholder="enter your card number" />
+        <Input
+          label="Experiation Date"
+          placeholder="enter your card experiation date YYMM"
+        />
+        <Input label="CVV" placeholder="security code" />
+      </div>
+      <div>
+        <Button color="primary">Fund</Button>
+      </div>
+    </>
   );
 }
 
