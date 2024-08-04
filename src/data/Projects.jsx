@@ -1,7 +1,7 @@
 const projects = [
   {
     id: "001",
-    name: "Tipi Travel",
+    name: "Tipi Travel initial fund",
     targetFund: 60000,
     currentFund: 5000,
     description:
