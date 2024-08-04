@@ -4,7 +4,7 @@ import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import App from "./App";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import { rootLoader } from "./routes/root";
+import HomeLayout, { rootLoader } from "./routes/root";
 import { projectLoader } from "./routes/project";
 import { projectsLoader } from "./routes/projects";
 import SpinnerScreen from "./components/design-system/SpinnerScreen";
@@ -22,7 +22,9 @@ const router = createHashRouter([
         path: "/",
         element: (
           <Suspense fallback={<SpinnerScreen />}>
-            <ProjectsPage />
+            <HomeLayout>
+              <ProjectsPage />
+            </HomeLayout>
           </Suspense>
         ),
         loader: projectsLoader,

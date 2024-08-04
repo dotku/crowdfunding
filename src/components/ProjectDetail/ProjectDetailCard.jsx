@@ -5,17 +5,25 @@ import {
   CardFooter,
   CardHeader,
   Divider,
+  Image,
 } from "@nextui-org/react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 
 export default function ProjectDetailCard({ project }) {
-  const { name, detail } = project;
+  const { name, detail, image } = project;
   return (
-    <Card>
+    <Card className="mt-6">
+      <Image
+        alt="Woman listing to music"
+        className="object-cover !w-full rounded-none"
+        src={image}
+        width={1300}
+        height={300}
+      />
       <CardHeader className="justify-between">
-        <h2 className="text-lg font-bold">{name}</h2>
+        <h2 className="text-3xl font-bold">{name}</h2>
       </CardHeader>
       <Divider />
       <CardBody>

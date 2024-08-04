@@ -4,6 +4,8 @@ const projects = [
     name: "Tipi Travel",
     discription:
       "An affortable group booking service that could lower down the travel cost",
+    image:
+      "https://t4.ftcdn.net/jpg/00/65/48/25/360_F_65482539_C0ZozE5gUjCafz7Xq98WB4dW6LAhqKfs.jpg",
     locations: [
       "Colombia",
       "Brazil",

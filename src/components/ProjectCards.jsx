@@ -7,6 +7,7 @@ import {
   Divider,
   Button,
   Spinner,
+  Image,
 } from "@nextui-org/react";
 import { useState } from "react";
 import SpinnerScreen from "./design-system/SpinnerScreen";
@@ -23,7 +24,15 @@ export default function ProjectCards() {
     <div className="flex justify-between">
       {Array.isArray(projects) && projects.length
         ? projects.map((p) => (
-            <Card key={p.id} className="w-[30%]">
+            <Card key={p.id} className="md:w-[30%] sm:w-full">
+              <Link to={`/project/${p.id}`}>
+                <Image
+                  alt="Woman listing to music"
+                  className="object-cover !w-full rounded-none"
+                  src={p.image}
+                  width={500}
+                />
+              </Link>
               <CardHeader>
                 <h3 className="text-large font-bold">{p.name}</h3>
               </CardHeader>
