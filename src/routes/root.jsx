@@ -6,6 +6,7 @@ export default function Root() {
     <>
       {/* all the other elements */}
       <div id="detail">
+        <h1>Crowdfunding</h1>
         <Outlet />
       </div>
     </>
