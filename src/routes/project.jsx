@@ -22,15 +22,17 @@ function ProjectDetailPage() {
 
   return (
     <>
-      <ProjectDetailCard project={project} />
+      <div className="mb-5">
+        <ProjectDetailCard project={project} />
+      </div>
       <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 my-3">
         <Input label="Name" placeholder="Joun Doe" />
         <Input label="Fund" placeholder="5" required />
       </div>
-      <div className="my-3">
+      <div className="mb-3">
         <Input label="Message" placeholder="the comment you wnat to leave" />
       </div>
-      <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 my-3">
+      <div className="flex w-full flex-wrap sm:flex-col md:flex-row md:flex-nowrap gap-4 mb-3">
         <Input label="Card Number" placeholder="enter your card number" />
         <Input
           label="Experiation Date"
