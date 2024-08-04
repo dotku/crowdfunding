@@ -1,17 +1,34 @@
-import Projects from "../data/Projects";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
+import { useLoaderData } from "react-router-dom";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Button,
+} from "@nextui-org/react";
 
 export default function ProjectCards() {
-  console.log("Projects", Projects);
+  const { projects } = useLoaderData();
+
+  console.log("Projects", projects);
   return (
     <div className="flex justify-between">
-      {Array.isArray(Projects) && Projects.length
-        ? Projects.map((p) => (
+      {Array.isArray(projects) && projects.length
+        ? projects.map((p) => (
             <Card key={p.id} className="w-[30%]">
-              <CardHeader>{p.name}</CardHeader>
+              <CardHeader>
+                <h3 className="text-large font-bold">{p.name}</h3>
+              </CardHeader>
+              <Divider />
               <CardBody>{p.discription}</CardBody>
-              <CardFooter>
-                <a href={`/project/${p.id}`}>More</a>
+              <Divider />
+              <CardFooter className="justify-end">
+                <a href={`/project/${p.id}`}>
+                  <Button color="primary" variant="ghost">
+                    More
+                  </Button>
+                </a>
               </CardFooter>
             </Card>
           ))
