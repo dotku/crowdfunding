@@ -60,7 +60,7 @@ export function genProjects() {
   return new Promise((rsv) => {
     setTimeout(() => {
       rsv(projects);
-    }, 500);
+    }, 3000);
   });
 }
 
@@ -69,7 +69,7 @@ export function genProject(id) {
     setTimeout(() => {
       const project = projects.find((p) => p.id === id);
       project ? rsv(project) : rej(`not found item with id: ${id}`);
-    }, 500);
+    }, 3000);
   });
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { NextUIProvider } from "@nextui-org/react";
@@ -6,8 +6,11 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { rootLoader } from "./routes/root";
 import { projectLoader } from "./routes/project";
-import { projectsLoader, ProjectsPage } from "./routes/projects";
-import ProjectDetailPage from "./routes/project";
+import { projectsLoader } from "./routes/projects";
+import SpinnerScreen from "./components/design-system/SpinnerScreen";
+
+const ProjectsPage = lazy(() => import("./routes/projects"));
+const ProjectDetailPage = lazy(() => import("./routes/project"));
 
 const router = createBrowserRouter([
   {
@@ -17,12 +20,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ProjectsPage />,
+        element: (
+          <Suspense fallback={<SpinnerScreen />}>
+            <ProjectsPage />
+          </Suspense>
+        ),
         loader: projectsLoader,
       },
       {
         path: "project/:id",
-        element: <ProjectDetailPage />,
+        element: (
+          <Suspense fallback={<SpinnerScreen />}>
+            <ProjectDetailPage />
+          </Suspense>
+        ),
         loader: projectLoader,
       },
     ],

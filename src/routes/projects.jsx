@@ -11,3 +11,5 @@ export async function projectsLoader() {
 }
 
 export const ProjectsPage = () => <ProjectCards />;
+
+export default ProjectsPage;

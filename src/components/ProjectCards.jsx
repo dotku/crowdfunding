@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -6,12 +6,19 @@ import {
   CardFooter,
   Divider,
   Button,
+  Spinner,
 } from "@nextui-org/react";
+import { useState } from "react";
+import SpinnerScreen from "./design-system/SpinnerScreen";
 
 export default function ProjectCards() {
   const { projects } = useLoaderData();
+  const navigation = useNavigation();
 
-  console.log("Projects", projects);
+  if (navigation.state === "loading") {
+    return <SpinnerScreen />;
+  }
+
   return (
     <div className="flex justify-between">
       {Array.isArray(projects) && projects.length
