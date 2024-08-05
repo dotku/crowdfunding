@@ -63,7 +63,7 @@ export default function ProjectDetailCard({ project }) {
               <Button>Prev</Button>
             </Link>
           ) : (
-            <Button className="text-gray-500" disabled>
+            <Button className="text-gray-400" disabled>
               Next
             </Button>
           )}
@@ -77,7 +77,7 @@ export default function ProjectDetailCard({ project }) {
               <Button>Next</Button>
             </Link>
           ) : (
-            <Button className="text-gray-500" disabled>
+            <Button className="text-gray-400" disabled>
               Next
             </Button>
           )}
