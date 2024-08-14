@@ -101,7 +101,7 @@ PROGRAMMES - these could happen in the locations as listed  above, people can ap
     name: "Mecury Credit Card",
     image: {
       url: "https://www.bookskeep.com/wp-content/uploads/2021/11/Featured-6.png",
-      className: "object-top",
+      className: "object-top p-2",
     },
     targetFund: "25000",
     description: `try to get $25000 to get mecury bank credit card`,
