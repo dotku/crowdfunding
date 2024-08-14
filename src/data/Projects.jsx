@@ -104,7 +104,7 @@ PROGRAMMES - these could happen in the locations as listed  above, people can ap
       className: "object-top p-2",
     },
     targetFund: "25000",
-    description: `try to get $25000 to get mecury bank credit card`,
+    description: `try to get $25,000 to get mecury bank credit card`,
     detail: `
 <p>We are a San Francisco based software company, not profit yet... but we build many websites, apps for the community and some startup companies, including
 🤝 <a href="https://github.com/dotku/crowdfunding" class="font-bold">Crowdfunding</a> 🚀.<p>
