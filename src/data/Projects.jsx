@@ -96,6 +96,23 @@ PROGRAMMES - these could happen in the locations as listed  above, people can ap
 <p>Plaese support us! 🙏</p>
     `,
   },
+  {
+    id: "004",
+    name: "Mecury Credit Card",
+    image: {
+      url: "https://www.bookskeep.com/wp-content/uploads/2021/11/Featured-6.png",
+      className: "object-top",
+    },
+    targetFund: "25000",
+    description: `try to get $25000 to get mecury bank credit card`,
+    detail: `
+<p>We are a San Francisco based software company, not profit yet... but we build many websites, apps for the community and some startup companies, including
+🤝 <a href="https://github.com/dotku/crowdfunding" class="font-bold">Crowdfunding</a> 🚀.<p>
+<p>We are looking for funding for our projects.</p>
+<p>We want to build a Decentralized Autonomous Organization (DAO) company that everyone can get involed and contribute. You can learn, play and get varied help.</p>
+<p>Plaese support us! 🙏</p>
+    `,
+  },
 ];
 
 export function genProjects() {
